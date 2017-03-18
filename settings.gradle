@@ -1,1 +1,1 @@
-include ':enlightened_app'
+include ':enlightened_app', ':iridiumhighlightingeditor'

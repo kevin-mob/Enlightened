@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Enlightened.iml" filepath="$PROJECT_DIR$/Enlightened.iml" />
       <module fileurl="file://$PROJECT_DIR$/enlightened_app/enlightened_app.iml" filepath="$PROJECT_DIR$/enlightened_app/enlightened_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iridiumhighlightingeditor/iridiumhighlightingeditor.iml" filepath="$PROJECT_DIR$/iridiumhighlightingeditor/iridiumhighlightingeditor.iml" />
     </modules>
   </component>
 </project>
