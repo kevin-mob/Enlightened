@@ -15,9 +15,11 @@ class HighlightingDefinitionLoader {
             "cs" -> return CSharpHighlightingDefinition()
             "cpp", "cxx" -> return CPlusPlusHighlightingDefinition()
             "lua" -> return LuaHighlightingDefinition()
-            //"py" -> return PythonHighlightingDefinition() //Not yet ready!
+            // "py" -> return PythonHighlightingDefinition() //Not yet ready!
             "txt" -> return NoHighlightingDefinition()
-            else -> return GenericHighlightingDefinition()
+            else -> {
+                return GenericHighlightingDefinition()
+            }
         }
     }
 }
