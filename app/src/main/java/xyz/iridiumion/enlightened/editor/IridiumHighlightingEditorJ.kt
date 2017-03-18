@@ -107,8 +107,8 @@ class IridiumHighlightingEditorJ : EditText {
         this.highlightingDefinition = newHighlightingDefinition
     }
 
-    fun setTextHighlighted(text: CharSequence?) {
-        var text = text
+    fun setTextHighlighted(hl_text: CharSequence?) {
+        var text = hl_text
         if (text == null)
             text = ""
 
@@ -140,8 +140,8 @@ class IridiumHighlightingEditorJ : EditText {
                 1)
     }
 
-    fun addUniform(statement: String?) {
-        var statement: String? = statement ?: return
+    fun addUniform(uniform_statement: String?) {
+        var statement: String? = uniform_statement ?: return
 
         val e = text
         val m = PATTERN_INSERT_UNIFORM.matcher(e)
@@ -468,8 +468,8 @@ class IridiumHighlightingEditorJ : EditText {
         return source.toString() + indent
     }
 
-    private fun convertTabs(e: Editable, start: Int, count: Int) {
-        var start = start
+    private fun convertTabs(e: Editable, start_pos: Int, count: Int) {
+        var start = start_pos
         if (tabWidth < 1)
             return
 
