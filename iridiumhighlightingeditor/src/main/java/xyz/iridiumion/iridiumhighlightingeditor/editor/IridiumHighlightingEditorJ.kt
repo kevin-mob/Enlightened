@@ -5,24 +5,15 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.os.Handler
 import android.support.v4.content.ContextCompat
-import android.text.Editable
-import android.text.InputFilter
-import android.text.TextWatcher
-import android.text.Spannable
-import android.text.SpannableStringBuilder
-import android.text.Spanned
+import android.text.*
 import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.ReplacementSpan
 import android.util.AttributeSet
 import android.widget.EditText
-
-import java.lang.IllegalStateException
-import java.util.regex.Pattern
-import java.util.regex.Matcher
-
-import xyz.iridiumion.enlightened.R
+import xyz.iridiumion.iridiumhighlightingeditor.R
 import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions.GenericHighlightingDefinition
+import java.util.regex.Pattern
 
 /**
  * Author: 0xFireball
