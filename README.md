@@ -47,6 +47,8 @@ Enlightened is GPLv3 licensed, so projects using the library must also use the G
 
 ## License
 
+Copyright &copy; 2016-2017 0xFireball (Nihal Talur), IridiumIon Software. All Rights Reserved.
+
 Enlightened Code Editor is licensed under the GNU General Public License 3.0.
 
-Copyright 2016 0xFireball, IridiumIon Software. All Rights Reserved.
+
