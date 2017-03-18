@@ -34,10 +34,10 @@ import java.io.IOException;
 
 import xyz.iridiumion.enlightened.EnlightenedApplication;
 import xyz.iridiumion.enlightened.R;
-import xyz.iridiumion.enlightened.editor.HighlightingDefinition;
-import xyz.iridiumion.enlightened.editor.IridiumHighlightingEditorJ;
+import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition;
+import xyz.iridiumion.iridiumhighlightingeditor.editor.IridiumHighlightingEditorJ;
 import xyz.iridiumion.enlightened.fragment.EditorFragment;
-import xyz.iridiumion.enlightened.highlightingdefinitions.HighlightingDefinitionLoader;
+import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.HighlightingDefinitionLoader;
 import xyz.iridiumion.enlightened.util.FileIOUtil;
 import xyz.iridiumion.enlightened.util.RandomUtils;
 import xyz.iridiumion.enlightened.widget.TouchThruDrawerLayout;

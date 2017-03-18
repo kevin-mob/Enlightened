@@ -1,12 +1,13 @@
-package xyz.iridiumion.enlightened.highlightingdefinitions.definitions
+package xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions
 
-import xyz.iridiumion.enlightened.editor.HighlightingDefinition
 import java.util.regex.Pattern
+
+import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 
 /**
  * Author: 0xFireball, IridiumIon Software
  */
-class CPlusPlusHighlightingDefinition : HighlightingDefinition {
+class JavaHighlightingDefinition : HighlightingDefinition {
 
     override fun getLinePattern(): Pattern {
         return PATTERN_LINE
@@ -45,32 +46,25 @@ class CPlusPlusHighlightingDefinition : HighlightingDefinition {
     }
 
     companion object {
-        //Default Highlighting definitions
         private val PATTERN_LINE = Pattern.compile(".*\\n")
         private val PATTERN_NUMBERS = Pattern.compile("\\b(\\d*[.]?\\d+)\\b")
         private val PATTERN_PREPROCESSOR = Pattern.compile(
-                "^[\t ]*(#include|#define|#undef|#if|#ifdef|#ifndef|#else|#elif|#endif|" + "#error|#pragma|#extension|#version|#line)\\b",
+                "^[\t ]*(#define|#undef|#if|#ifdef|#ifndef|#else|#elif|#endif|" + "#error|#pragma|#extension|#version|#line)\\b",
                 Pattern.MULTILINE)
         private val PATTERN_STRING = Pattern.compile("\"((\\\\[^\\n]|[^\"\\n])*)\"")
         private val PATTERN_KEYWORDS = Pattern.compile(
                 "\\b(var|try|catch|finally|break|continue|" +
-                        "do|for|foreach|continue|while|if|else|switch|in|is|as|float|int|void|bool|true|false|new|" +
-                        "public|static|readonly|const|private|protected|class|interface|using|namespace|struct|this|base|" +
+                        "do|for|continue|while|if|else|switch|in|instanceof|float|int|void|bool|true|false|new|" +
                         "true|false|null|return|" +
-                        "virtual|internal|abstract|override|async|await|explicit|ref|out|extern|checked|unchecked|" +
-                        "continue|enum|lock|partial|params|typeof|unsafe|implicit|default|let|yield|value|operator|global" +
+                        "public|static|final|private|protected|class|interface|import|package|this|super" +
                         ")\\b")
         private val PATTERN_BUILTINS = Pattern.compile(
-                "\\b(void|int|long|ulong|float|double|bool|short|byte|char|object|string|dynamic|" +
-                        "cout|cin|endl|string" +
-                        ")\\b")
+                "\\b(void|int|long|float|double|boolean|char|Object|String)\\b")
         private val PATTERN_COMMENTS = Pattern.compile("/\\*(?:.|[\\n\\r])*?\\*/|//.*")
-        private val PATTERN_SYMBOL = Pattern.compile("(\\{|\\}\\)|\\()")
+        private val PATTERN_SYMBOL = Pattern.compile("(\\{|\\}\\)|\\()") //TODO: Are we sure about this?
         private val PATTERN_IDENTIFIER = Pattern.compile("((?<=class)\\s\\w*)|" +
-                "((?<=struct)\\s\\w*)|" +
-                "((?<=typedef)\\s\\w*)|" +
-                "((?<=using)\\s(\\w|\\.)+[^;])|" + //Match everything between import and semicolon
+                "((?<=import)\\s(\\w|\\.)+[^;])|" + //Match everything between import and semicolon
 
-                "((?<=namespace)\\s(\\w|\\.)+[^;])")
+                "((?<=package)\\s(\\w|\\.)+[^;])")
     }
 }

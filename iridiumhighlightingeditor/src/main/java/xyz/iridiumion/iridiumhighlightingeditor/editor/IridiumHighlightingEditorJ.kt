@@ -1,4 +1,4 @@
-package xyz.iridiumion.enlightened.editor
+package xyz.iridiumion.iridiumhighlightingeditor.editor
 
 import android.content.Context
 import android.graphics.Canvas
@@ -22,7 +22,7 @@ import java.util.regex.Pattern
 import java.util.regex.Matcher
 
 import xyz.iridiumion.enlightened.R
-import xyz.iridiumion.enlightened.highlightingdefinitions.definitions.GenericHighlightingDefinition
+import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions.GenericHighlightingDefinition
 
 /**
  * Author: 0xFireball

@@ -1,13 +1,13 @@
-package xyz.iridiumion.enlightened.highlightingdefinitions.definitions
+package xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions
 
 import java.util.regex.Pattern
 
-import xyz.iridiumion.enlightened.editor.HighlightingDefinition
+import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 
 /**
- * Author: 0xFireball
+ * Author: 0xFireball, IridiumIon Software
  */
-class JavaScriptHighlightingDefinition : HighlightingDefinition {
+class NoHighlightingDefinition : HighlightingDefinition {
 
 
     override fun getLinePattern(): Pattern {
@@ -50,16 +50,13 @@ class JavaScriptHighlightingDefinition : HighlightingDefinition {
         //Default Highlighting definitions
         private val PATTERN_LINE = Pattern.compile(".*\\n")
         private val PATTERN_NUMBERS = Pattern.compile("\\b(\\d*[.]?\\d+)\\b")
-        private val PATTERN_PREPROCESSOR = Pattern.compile(
-                "^[\t ]*(#define|#undef|#if|#ifdef|#ifndef|#else|#elif|#endif|" + "#error|#pragma|#extension|#version|#line)\\b",
-                Pattern.MULTILINE)
-        private val PATTERN_STRING = Pattern.compile("\"((\\\\[^\\n]|[^\"\\n])*)\"")
-        private val PATTERN_KEYWORDS = Pattern.compile(
-                "\\b(let|var|try|catch|break|continue|" + "do|for|while|if|else|switch|in|out|inout|float|int|void|bool|true|false|new|function)\\b")
-        private val PATTERN_BUILTINS = Pattern.compile(
-                "\\b(radians|degrees|sin|cos|tan|asin|acos|atan|pow|JSON|document|window|location|console)\\b")
-        private val PATTERN_COMMENTS = Pattern.compile("/\\*(?:.|[\\n\\r])*?\\*/|//.*")
-        private val PATTERN_SYMBOL = Pattern.compile("(\\{|\\}\\)|\\()")
+        private val PATTERN_PREPROCESSOR = Pattern.compile("a^")
+        private val PATTERN_STRING = Pattern.compile("a^")
+        private val PATTERN_KEYWORDS = Pattern.compile("a^")
+        private val PATTERN_BUILTINS = Pattern.compile("a^")
+        private val PATTERN_COMMENTS = Pattern.compile("a^")
+        private val PATTERN_SYMBOL = Pattern.compile("a^")
         private val PATTERN_IDENTIFIER = Pattern.compile("a^")
     }
+
 }

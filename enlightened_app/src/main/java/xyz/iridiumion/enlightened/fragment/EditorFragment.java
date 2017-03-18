@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 import xyz.iridiumion.enlightened.R;
-import xyz.iridiumion.enlightened.editor.IridiumHighlightingEditorJ;
+import xyz.iridiumion.iridiumhighlightingeditor.editor.IridiumHighlightingEditorJ;
 
 /**
  * A simple {@link Fragment} subclass.

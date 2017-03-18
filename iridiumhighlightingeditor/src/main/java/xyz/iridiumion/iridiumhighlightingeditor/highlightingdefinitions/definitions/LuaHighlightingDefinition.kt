@@ -1,6 +1,6 @@
-package xyz.iridiumion.enlightened.highlightingdefinitions.definitions
+package xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions
 
-import xyz.iridiumion.enlightened.editor.HighlightingDefinition
+import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 import java.util.regex.Pattern
 
 /**

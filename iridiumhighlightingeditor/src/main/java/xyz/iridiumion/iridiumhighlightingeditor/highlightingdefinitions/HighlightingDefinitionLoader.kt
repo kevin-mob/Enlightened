@@ -1,7 +1,7 @@
-package xyz.iridiumion.enlightened.highlightingdefinitions
+package xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions
 
-import xyz.iridiumion.enlightened.editor.HighlightingDefinition
-import xyz.iridiumion.enlightened.highlightingdefinitions.definitions.*
+import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
+import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions.*
 
 /**
  * Author: 0xFireball

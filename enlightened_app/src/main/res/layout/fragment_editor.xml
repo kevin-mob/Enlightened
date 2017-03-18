@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="xyz.iridiumion.enlightened.fragment.EditorFragment">
 
-    <xyz.iridiumion.enlightened.editor.IridiumHighlightingEditorJ xmlns:android="http://schemas.android.com/apk/res/android"
+    <xyz.iridiumion.iridiumhighlightingeditor.editor.IridiumHighlightingEditorJ xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/editor"
         android:layout_width="match_parent"

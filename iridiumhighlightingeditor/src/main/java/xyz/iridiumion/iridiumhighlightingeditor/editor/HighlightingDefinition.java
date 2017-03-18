@@ -1,4 +1,4 @@
-package xyz.iridiumion.enlightened.editor;
+package xyz.iridiumion.iridiumhighlightingeditor.editor;
 
 import java.util.regex.Pattern;
 

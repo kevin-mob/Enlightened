@@ -1,13 +1,12 @@
-package xyz.iridiumion.enlightened.highlightingdefinitions.definitions
+package xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions
 
+import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 import java.util.regex.Pattern
-
-import xyz.iridiumion.enlightened.editor.HighlightingDefinition
 
 /**
  * Author: 0xFireball, IridiumIon Software
  */
-class JavaHighlightingDefinition : HighlightingDefinition {
+class PythonHighlightingDefinition : HighlightingDefinition {
 
     override fun getLinePattern(): Pattern {
         return PATTERN_LINE
@@ -59,7 +58,7 @@ class JavaHighlightingDefinition : HighlightingDefinition {
                         "public|static|final|private|protected|class|interface|import|package|this|super" +
                         ")\\b")
         private val PATTERN_BUILTINS = Pattern.compile(
-                "\\b(void|int|long|float|double|boolean|char|Object|String)\\b")
+                "\\b(void|int|long|float|double|boolean|Object|String)\\b")
         private val PATTERN_COMMENTS = Pattern.compile("/\\*(?:.|[\\n\\r])*?\\*/|//.*")
         private val PATTERN_SYMBOL = Pattern.compile("(\\{|\\}\\)|\\()") //TODO: Are we sure about this?
         private val PATTERN_IDENTIFIER = Pattern.compile("((?<=class)\\s\\w*)|" +
