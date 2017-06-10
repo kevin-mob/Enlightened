@@ -27,5 +27,13 @@
     <string name="pref_tab_size_summary">The tab size for the editor</string>
     <string name="pref_tab_size">Tab Size</string>
 
+    <string name="cancel">Cancel</string>
+    <string name="load_save_permission_required">Enlightened needs your permission to load and save files. Please grant this permission in settings.</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="dialog_got_it">Got it</string>
+    <string name="file_loaded">File loaded</string>
+    <string name="oops">Oops!</string>
+    <string name="file_saved">File saved</string>
+
 
 </resources>

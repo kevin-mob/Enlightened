@@ -295,7 +295,7 @@ public class MainActivity extends AppCompatActivity implements IridiumHighlighti
                         try {
                             FileIOUtil.INSTANCE.writeAllText(currentOpenFilePath, textToSave);
                             if (showToast)
-                                Toast.makeText(MainActivity.this, "File saved", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, R.string.file_saved, Toast.LENGTH_SHORT).show();
                         } catch (IOException e) {
                             //e.printStackTrace();
                             showExceptionDialog(e);
@@ -306,11 +306,7 @@ public class MainActivity extends AppCompatActivity implements IridiumHighlighti
                     @Override
                     public void onPermissionsRefused(String[] permissions) {
                         // given permissions are refused
-                        new MaterialDialog.Builder(MainActivity.this)
-                                .title("Permission not granted")
-                                .content("Enlightened needs your permission to load and save files. Please grant this permission in settings.")
-                                .positiveText("Got it")
-                                .show();
+                        MainActivity.this.showPermissionMissing();
                     }
                 })
                 .execute(MainActivity.this);
@@ -320,8 +316,8 @@ public class MainActivity extends AppCompatActivity implements IridiumHighlighti
         MaterialDialog saveFileAsDialog = new MaterialDialog.Builder(this)
                 .title("Save File As")
                 .customView(R.layout.dialog_save_file_as, true)
-                .positiveText("Save As")
-                .negativeText("Cancel")
+                .positiveText(R.string.save_file_as)
+                .negativeText(R.string.cancel)
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -361,15 +357,19 @@ public class MainActivity extends AppCompatActivity implements IridiumHighlighti
                 .whenPermissionsRefused(new PermissionsRefusedListener() {
                     @Override
                     public void onPermissionsRefused(String[] permissions) {
-                        // given permissions are refused
-                        new MaterialDialog.Builder(MainActivity.this)
-                                .title("Permission not granted")
-                                .content("Enlightened needs your permission to load and save files. Please grant this permission in settings.")
-                                .positiveText("Got it")
-                                .show();
+                        MainActivity.this.showPermissionMissing();
                     }
                 })
                 .execute(MainActivity.this);
+    }
+
+    private void showPermissionMissing() {
+        // given permissions are refused
+        new MaterialDialog.Builder(MainActivity.this)
+                .title(R.string.permission_not_granted)
+                .content(R.string.load_save_permission_required)
+                .positiveText(R.string.dialog_got_it)
+                .show();
     }
 
     private void browseForFile() {
@@ -395,7 +395,7 @@ public class MainActivity extends AppCompatActivity implements IridiumHighlighti
                 HighlightingDefinition highlightingDefinition = definitionLoader.selectDefinitionFromFileExtension(selectedFileExt);
                 editorFragment.getEditor().loadHighlightingDefinition(highlightingDefinition);
                 currentOpenFilePath = selectedFilePath;
-                Toast.makeText(this, "File loaded", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.file_loaded, Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
                 //e.printStackTrace();
                 showExceptionDialog(e);
@@ -405,10 +405,10 @@ public class MainActivity extends AppCompatActivity implements IridiumHighlighti
 
     private void showExceptionDialog(Exception e) {
         new MaterialDialog.Builder(MainActivity.this)
-                .title("Oops!")
+                .title(R.string.oops)
                 .content(String.format("An unexpected error occurred: %s", e.getMessage() == null ?
                         e.toString() : e.getMessage()))
-                .positiveText("Got it")
+                .positiveText(R.string.dialog_got_it)
                 .show();
     }
 
