@@ -18,6 +18,8 @@
         android:textColor="@color/editor_text"
         android:textSize="12sp"
         android:typeface="monospace"
+        android:completionThreshold="1"
+        android:dropDownVerticalOffset="-200dp"
         tools:ignore="Overdraw" />
 
 </FrameLayout>

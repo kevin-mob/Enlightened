@@ -6,7 +6,7 @@ import java.util.regex.Pattern
 /**
  * Author: 0xFireball, IridiumIon Software
  */
-class CPlusPlusHighlightingDefinition : HighlightingDefinition {
+class CPlusPlusHighlightingDefinition : HighlightingBase() {
 
     override fun getLinePattern(): Pattern {
         return PATTERN_LINE

@@ -9,7 +9,7 @@ import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
  */
 
 //TODO: Include color in a newer version
-class GenericHighlightingDefinition : HighlightingDefinition {
+class GenericHighlightingDefinition : HighlightingBase() {
 
 
     override fun getLinePattern(): Pattern {

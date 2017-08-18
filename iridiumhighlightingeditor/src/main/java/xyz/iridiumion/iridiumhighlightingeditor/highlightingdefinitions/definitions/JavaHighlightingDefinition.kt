@@ -7,7 +7,7 @@ import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 /**
  * Author: 0xFireball, IridiumIon Software
  */
-class JavaHighlightingDefinition : HighlightingDefinition {
+class JavaHighlightingDefinition : HighlightingBase() {
 
     override fun getLinePattern(): Pattern {
         return PATTERN_LINE

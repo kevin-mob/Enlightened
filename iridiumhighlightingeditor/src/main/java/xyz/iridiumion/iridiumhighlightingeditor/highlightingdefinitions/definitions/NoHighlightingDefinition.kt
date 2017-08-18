@@ -7,7 +7,7 @@ import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 /**
  * Author: 0xFireball, IridiumIon Software
  */
-class NoHighlightingDefinition : HighlightingDefinition {
+class NoHighlightingDefinition : HighlightingBase() {
 
 
     override fun getLinePattern(): Pattern {

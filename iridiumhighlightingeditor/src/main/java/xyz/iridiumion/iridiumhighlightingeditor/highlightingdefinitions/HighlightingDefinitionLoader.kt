@@ -8,7 +8,7 @@ import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definiti
  */
 class HighlightingDefinitionLoader {
 
-    fun selectDefinitionFromFileExtension(selectedFileExt: String): HighlightingDefinition {
+    fun selectDefinitionFromFileExtension(selectedFileExt: String): HighlightingBase {
         when (selectedFileExt) {
             "js" -> return JavaScriptHighlightingDefinition()
             "java" -> return JavaHighlightingDefinition()

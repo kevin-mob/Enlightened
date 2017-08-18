@@ -10,20 +10,23 @@ import android.text.style.BackgroundColorSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.ReplacementSpan
 import android.util.AttributeSet
-import android.widget.EditText
 import xyz.iridiumion.iridiumhighlightingeditor.R
-import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions.GenericHighlightingDefinition
 import java.util.regex.Pattern
+import android.widget.ArrayAdapter
+import android.widget.MultiAutoCompleteTextView
+import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions.GenericHighlightingDefinition
+import xyz.iridiumion.iridiumhighlightingeditor.highlightingdefinitions.definitions.HighlightingBase
+
 
 /**
  * Author: 0xFireball
  */
-class IridiumHighlightingEditorJ : EditText {
+class IridiumHighlightingEditorJ : MultiAutoCompleteTextView {
     interface OnTextChangedListener {
         fun onTextChanged(text: String)
     }
 
-    private var highlightingDefinition: HighlightingDefinition = GenericHighlightingDefinition()
+    private var highlightingDefinition: HighlightingBase = GenericHighlightingDefinition()
 
     private val updateHandler = Handler()
     private val updateRunnable = Runnable {
@@ -94,8 +97,13 @@ class IridiumHighlightingEditorJ : EditText {
         highlightWithoutChange(text)
     }
 
-    fun loadHighlightingDefinition(newHighlightingDefinition: HighlightingDefinition) {
+    fun loadHighlightingDefinition(newHighlightingDefinition: HighlightingBase) {
         this.highlightingDefinition = newHighlightingDefinition
+        if(newHighlightingDefinition.getKeywords().size > 0){
+            var arrayAdapter : ArrayAdapter<String> = ArrayAdapter(this.context, android.R.layout.simple_list_item_1, newHighlightingDefinition.getKeywords())
+            this.setAdapter(arrayAdapter)
+            this.setTokenizer(KeywordsTokenizer(' '))
+        }
     }
 
     fun setTextHighlighted(hl_text: CharSequence?) {
@@ -126,7 +134,7 @@ class IridiumHighlightingEditorJ : EditText {
         text.replace(
                 Math.min(start, end),
                 Math.max(start, end),
-                "\t",
+                "    ",
                 0,
                 1)
     }
@@ -204,8 +212,7 @@ class IridiumHighlightingEditorJ : EditText {
                             s: CharSequence,
                             start: Int,
                             count: Int,
-                            after: Int) {
-                    }
+                            after: Int) {}
 
                     override fun afterTextChanged(e: Editable) {
                         cancelUpdate()
@@ -453,7 +460,7 @@ class IridiumHighlightingEditorJ : EditText {
 
         // add new indent
         if (pt < 0)
-            indent += "\t"
+            indent += "    "
 
         // append white space of previous line and new indent
         return source.toString() + indent
@@ -535,6 +542,56 @@ class IridiumHighlightingEditorJ : EditText {
                 var n = spans.size
                 while (n-- > 0)
                     e.removeSpan(spans[n])
+            }
+        }
+    }
+
+    class KeywordsTokenizer(private val c: Char) : Tokenizer {
+
+        override fun findTokenStart(text: CharSequence, cursor: Int): Int {
+            var i = cursor
+
+            while (i > 0 && text[i - 1] != c && text[i - 1] != '\n') {
+                i--
+            }
+
+            while (i < cursor && text[i] == ' ') {
+                i++
+            }
+            return i
+        }
+
+        override fun findTokenEnd(text: CharSequence, cursor: Int): Int {
+            var i = cursor
+            val len = text.length
+
+            while (i < len) {
+                if (text[i] == c) {
+                    return i
+                } else {
+                    i++
+                }
+            }
+            return len
+        }
+
+        override fun terminateToken(text: CharSequence): CharSequence {
+            var i = text.length
+
+            while (i > 0 && text[i - 1] == ' ') {
+                i--
+            }
+
+            if (i > 0 && text[i - 1] == c) {
+                return text
+            } else {
+                if (text is Spanned) {
+                    val sp = SpannableString(text)
+                    TextUtils.copySpansFrom(text, 0, text.length, Any::class.java, sp, 0)
+                    return sp
+                } else {
+                    return text
+                }
             }
         }
     }

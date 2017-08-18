@@ -7,7 +7,7 @@ import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 /**
  * Author: 0xFireball
  */
-class JavaScriptHighlightingDefinition : HighlightingDefinition {
+class JavaScriptHighlightingDefinition : HighlightingBase() {
 
 
     override fun getLinePattern(): Pattern {

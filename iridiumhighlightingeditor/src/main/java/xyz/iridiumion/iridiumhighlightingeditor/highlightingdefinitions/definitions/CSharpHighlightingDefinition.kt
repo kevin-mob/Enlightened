@@ -7,7 +7,7 @@ import xyz.iridiumion.iridiumhighlightingeditor.editor.HighlightingDefinition
 /**
  * Author: 0xFireball, IridiumIon Software
  */
-class CSharpHighlightingDefinition : HighlightingDefinition {
+class CSharpHighlightingDefinition : HighlightingBase() {
 
     override fun getLinePattern(): Pattern {
         return PATTERN_LINE
